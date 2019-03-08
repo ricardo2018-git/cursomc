@@ -6,5 +6,5 @@ import com.ricardo.cursomc.domain.Categoria;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
-	// inteface que faz serviços crud p/ categoria
+	// inteface que faz serviços crud p/ Categoria
 }
