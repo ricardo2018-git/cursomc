@@ -11,7 +11,6 @@ import com.ricardo.cursomc.domain.ItemPedido;
 import com.ricardo.cursomc.domain.PagamentoComBoleto;
 import com.ricardo.cursomc.domain.Pedido;
 import com.ricardo.cursomc.domain.enums.EstadoPagamento;
-import com.ricardo.cursomc.repositories.ClienteRepository;
 import com.ricardo.cursomc.repositories.ItemPedidoRepository;
 import com.ricardo.cursomc.repositories.PagamentoRepository;
 import com.ricardo.cursomc.repositories.PedidoRepository;
@@ -38,8 +37,11 @@ public class PedidoService {
 	@Autowired
 	private ClienteService clienteService;
 	
+//	@Autowired
+//	private ClienteRepository clienteRepository;
+	
 	@Autowired
-	private ClienteRepository clienteRepository;
+	private EmailService emailService;
 	
 	public Pedido find(Integer id) {
 		Optional<Pedido> obj = repo.findById(id);
@@ -67,7 +69,7 @@ public class PedidoService {
 			ip.setPedido(obj);
 		}
 		itemPedidoRepository.saveAll(obj.getItens());
-		System.out.println(obj);
+		emailService.sendOrderConfirmationEmail(obj);	// print no console
 		return obj;
 	}
 }
