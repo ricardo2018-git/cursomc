@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.ricardo.cursomc.services.DBService;
+import com.ricardo.cursomc.services.EmailService;
+import com.ricardo.cursomc.services.SmtpEmailService;
 
 @Configuration	// Class de configuração
 @Profile("dev")	// Só vai funcionar quando o profile dev, estiver habilitado
@@ -31,4 +33,8 @@ public class DevConfig {
 		return true;
 	}
 	
+	@Bean
+	public EmailService emailServiceGmail() {
+		return new SmtpEmailService();
+	}
 }
