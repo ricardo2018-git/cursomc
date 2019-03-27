@@ -59,9 +59,16 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency> 
 		
+		<!-- Recurso para enviar e-mail -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		
+		<!-- Carrega o THYMELEAF na app -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		
 	</dependencies>
