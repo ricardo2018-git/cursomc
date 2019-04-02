@@ -31,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	// Vetor dos links que vão ser p/ leitura
 	private static final String[] PUBLIC_MATCHERS_GET = {
 		"/produtos/**",
-		"/categorias/**"
+		"/categorias/**",
+		"/clientes/**"
 	};
 	
 	// Libera os links
